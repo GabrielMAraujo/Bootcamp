@@ -1,10 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const bootcamps = require("./routes/bootcamps");
 
 //Carregar variáveis de ambiente
 dotenv.config({ path: "./config/config.env" });
 
 const app = express();
+
+app.use("/api/v1/bootcamps", bootcamps);
 
 const port = process.env.PORT || 5000;
 
